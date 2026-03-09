@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decoding The Drawings</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div>
+        <p>Input:</p>
+        <video id="videoCanvas" style="display: none;"></video>
+        <canvas id="inputCanvas"></canvas>
+
+        <canvas id="simulationCanvas" width="1280" height="700"></canvas>
+
+        <input id="fileInput" type="file" accept="video/*" />
+        <button id="simulationButton">Simulation</button>
+        <p>Segmentation</p>
+        <canvas id="segmentationCanvas"></canvas>
+    </div>
+
+
+
+    <div>
+        <p>Output: </p>
+    <canvas id="outputCanvas" width="800" height="1400"></canvas>
+    </div>
+    
+    
+    
+    
+    
+    <script src="math.js"></script>
+    <script src="imageProcessing.js"></script>
+    <script src="output.js"></script>
+    <script src="parameters.js"></script>
+    <script src="estimator.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.110.0/build/three.min.js"></script>
+
+    <script src="simulator.js"></script>
+
+    <script src="main.js"></script>
+
+
+</body>
+</html>
