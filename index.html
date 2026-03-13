@@ -7,18 +7,22 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <div>
-        <p>Input:</p>
-        <video id="videoCanvas" style="display: none;"></video>
-        <canvas id="inputCanvas"></canvas>
-
-        <canvas id="simulationCanvas" width="1280" height="700"></canvas>
-
-        <input id="fileInput" type="file" accept="video/*" />
+    <div id="startPanel">
+        <input id="fileInput" type="file" accept="video/*" style="display: none">
+        <button id="videoButton">Video</button>
         <button id="simulationButton">Simulation</button>
-        <p>Segmentation</p>
-        <canvas id="segmentationCanvas"></canvas>
     </div>
+    <div id="mainInterface" style="display : none">
+        <div>
+            <p>Input:</p>
+            <video id="videoCanvas" style="display: none"></video>
+            <canvas id="inputCanvas"></canvas>
+
+            <canvas id="simulationCanvas" width="1280" height="700"></canvas>
+            <p>Segmentation</p>
+            <canvas id="segmentationCanvas"></canvas>
+        </div>
+    
 
 
 
@@ -26,11 +30,11 @@
         <p>Output: </p>
     <canvas id="outputCanvas" width="800" height="1400"></canvas>
     </div>
+    </div>
     
     
     
-    
-    
+    <script src="input.js"></script>
     <script src="math.js"></script>
     <script src="imageProcessing.js"></script>
     <script src="output.js"></script>
