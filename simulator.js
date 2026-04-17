@@ -21,8 +21,8 @@ const path = generateCirclePath(INITIAL_CAMERA_POSITION)
 
 function updateSimulation() {
     const trueCameraPosition = path.shift()
-    camera.position.copy()
-    camera.lookAt(new THREE.Vector3(0, PEN_HEIGHT, 0))
+    camera.position.copy(trueCameraPosition)
+    // camera.lookAt(new THREE.Vector3(0, PEN_HEIGHT, 0))
     renderer.render(scene, camera)
     return trueCameraPosition
 }

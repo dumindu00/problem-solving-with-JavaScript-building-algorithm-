@@ -16,8 +16,13 @@ fileInput.onchange = function(event) {
             inputType = "video"
             videoCanvas.width = inputVideo.videoWidth;
             videoCanvas.height = inputVideo.videoHeight;
+            
             segmentationCanvas.width = inputVideo.videoWidth;
             segmentationCanvas.height = inputVideo.videoHeight;
+            
+            distortionCanvas.width = inputVideo.videoWidth;
+            distortionCanvas.height = inputVideo.videoHeight;
+            
             videoCanvas.style.display = "none"
             mainInterface.style.display = "flex"
             startPanel.style.display = "none"
@@ -30,6 +35,10 @@ fileInput.onchange = function(event) {
             inputType = 'simulation'
             segmentationCanvas.width = simulationCanvas.width;
             segmentationCanvas.height = simulationCanvas.height;
+
+            distortionCanvas.width = simulationCanvas.width;
+            distortionCanvas.height = simulationCanvas.height;
+            
             videoCanvas.style.display = "none"
             mainInterface.style.display = "flex"
             startPanel.style.display = "none"
