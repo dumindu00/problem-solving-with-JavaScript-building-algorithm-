@@ -28,3 +28,34 @@ function segmentImage(imgData, threshold = 100) {
     ctx.putImageData(outputData, 0, 0);
     return rgbCounts;
 }
+
+function distortImage(imgData, focalLength) {
+    const { width, height, data } = imgData;
+    const ctx = distortionCanvas.getContext("2d")
+
+    const outputData = ctx.createImageData(width, height)
+
+    for (let y = 0; y < height; y++) {
+        for (let x = 0; x < width; x++) {
+            const dx = x - center.x;
+            const dy = y - center.y;
+            const d = Math.hypot(dx, dy);
+            const theta = 2 * Math.PI * d / circumference;
+            const dPrime = Math.tan(theta) * focalLength
+            const phi = Math.atan2(dy, dx);
+            const srcX = center.x + dPrime * Math.cos(phi);
+            const srcY = center.y + dPrime * Math.sin(phi)
+
+            if(srcX >= 0 && srcX < width && srcY >= 0 && srcY < height) {
+                const srcIndex = (Math.round(srcY) * width  + Math.round(srcX)) * 4
+                const targetIndex = (y * width + x) * 4;
+                for (let i = 0; i <= 3; i++) {
+                    outputData.data[targetIndex + i] = data[srcIndex + i]
+                }
+            }
+        }
+    }
+    ctx.putImageData(outputData, 0, 0)
+
+    return outputData;
+}

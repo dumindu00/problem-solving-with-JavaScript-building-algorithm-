@@ -9,7 +9,9 @@ const cameraPositions = [];
 
             const { imgData, trueCameraPosition } = getInputImageData();
 
-            const rgbCounts = segmentImage(imgData);
+            const distortedImgData = distortImage(imgData)
+
+            const rgbCounts = segmentImage(distortedImgData);
             const distancesToBalls = estimateDistancesToBalls(rgbCounts)
             const cameraPosition = estimateCameraPosition(distancesToBalls)
 
