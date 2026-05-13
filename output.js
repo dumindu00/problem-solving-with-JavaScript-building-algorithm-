@@ -12,8 +12,8 @@ function drawOutput(distancesToBalls, path, trueCameraPosition) {
     ctx.fillText("Top View", 5, 5);
 
     ctx.save();
-    ctx.translate(width / 2, height / 2)
-    ctx.scale(15, 15)
+    ctx.translate(width / 2, height * 0.1)
+    ctx.scale(30, 30)
 
     for (let i = BALLS.length -1 ; i >= 1; i--) {
         const { x, z, radius, color} = BALLS[i];
