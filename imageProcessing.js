@@ -40,7 +40,8 @@ function distortImage(imgData, focalLength) {
             const dx = x - center.x;
             const dy = y - center.y;
             const d = Math.hypot(dx, dy);
-            const theta = 2 * Math.PI * d / circumference;
+            // const theta = 2 * Math.PI * d / circumference;
+            const theta = 2 * Math.asin(d / 2 / focalLength)
             const dPrime = Math.tan(theta) * focalLength
             const phi = Math.atan2(dy, dx);
             const srcX = center.x + dPrime * Math.cos(phi);

@@ -1,18 +1,20 @@
-let initialApparentRadii = null;
+// let initialApparentRadii = null;
 
 
-function estimateDistancesToBalls(rgbCounts) {
+function estimateDistancesToBalls(rgbCounts, focalLength) {
 
-const apparentRaddi = rgbCounts.map( Math.sqrt(area))
-            if (!initialApparentRadii) {
-                initialApparentRadii = apparentRaddi
-            };
+const apparentRaddii = rgbCounts.map( Math.sqrt(area / Math.PI) )
+            // if (!initialApparentRadii) {
+            //     initialApparentRadii = apparentRaddii
+            // };
 
             const distancesToBalls = [];
-            for (let i =  0; i < apparentRaddi.length; i++) {
-                const ratio = initialApparentRadii[i] / apparentRaddi[i]
-                distancesToBalls[i] = INITIAL_DISTANCE_TO_BALLS[i] * ratio
-            }
+            for (let i =  0; i < apparentRaddii.length; i++) {
+                // const ratio = initialApparentRadii[i] / apparentRaddii[i]
+                // distancesToBalls[i] = INITIAL_DISTANCE_TO_BALLS[i] * ratio
+                // const alpha = Math.asin(apparentRaddii / focalLength)
+                distancesToBalls[i] = BALLS[i].radius / (apparentRaddii[i] / focalLength)
+            }   
             return distancesToBalls;
 }
 

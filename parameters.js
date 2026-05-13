@@ -13,9 +13,9 @@ const INITIAL_CAMERA_POSITION = {
 
 const BALLS = initializeBalls();
 
-const INITIAL_DISTANCE_TO_BALLS = BALLS.map(ball => 
-    distance(ball, INITIAL_CAMERA_POSITION)
-)
+// const INITIAL_DISTANCE_TO_BALLS = BALLS.map(ball => 
+//     distance(ball, INITIAL_CAMERA_POSITION)
+// )
 
 function initializeBalls() {
     const triangleLength = DISTANCE_BETWEEN_BALLS;
